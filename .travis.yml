@@ -1,0 +1,27 @@
+# dist: bionic
+language: python
+os:
+  - linux
+
+python:
+  - 3.6
+
+addons:
+  apt:
+    update: false
+    packages:
+      - wget
+
+script: |
+  git config --global user.name "zgpio"
+  git config --global user.email "zgpio@qq.com"
+  git config --global credential.helper store
+  echo $GIT_CREDENTIALS > ~/.git-credentials
+  python update.py
+  git -C repo init
+  git -C repo add .
+  git -C repo commit -m "init"
+  git -C repo remote add origin https://${GITEE_TOKEN}@gitee.com/zgpio/pkg.git > /dev/null 2>&1
+  git -C repo push -f origin master
+  python plugin/update.py --dest ./
+  ls -al

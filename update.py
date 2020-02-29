@@ -20,6 +20,7 @@ def get():
         'https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.4-r8/ShadowsocksX-NG-R8.dmg',
         'https://github.com/archagon/sensible-side-buttons/releases/download/1.0.6/SensibleSideButtons-1.0.6.dmg',
         'https://github.com/citra-emu/citra-canary/releases/download/canary-1557/citra-windows-mingw-20200204-21e03bc.7z',
+        'https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip',
     ]
     # TODO: version detect
     for i in github_releases:

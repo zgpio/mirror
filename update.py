@@ -28,9 +28,9 @@ def get():
         {
             'mac': 'https://github.com/archagon/sensible-side-buttons/releases/download/1.0.6/SensibleSideButtons-1.0.6.dmg',
         },
-        {
-            'win': 'https://github.com/citra-emu/citra-canary/releases/download/canary-1557/citra-windows-mingw-20200204-21e03bc.7z',
-        },
+        # {
+        #     'win': 'https://github.com/citra-emu/citra-canary/releases/download/canary-1557/citra-windows-mingw-20200204-21e03bc.7z',
+        # },
     ]
     # TODO: version detect
     for i in github_releases:

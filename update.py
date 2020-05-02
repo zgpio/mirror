@@ -18,6 +18,7 @@ def get():
         {
             'mac': 'https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz',
             'win': 'https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip',
+            'lin': 'https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage',
         },
         {
             'mac': 'https://github.com/kovidgoyal/kitty/releases/download/v0.15.1/kitty-0.15.1.dmg',

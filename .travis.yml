@@ -28,5 +28,10 @@ script: |
   git -C repo-mac commit -m "init"
   git -C repo-mac remote add origin https://${GITEE_TOKEN}@gitee.com/zgpio/macpkg.git > /dev/null 2>&1
   git -C repo-mac push -f origin master
+  git -C repo-lin init
+  git -C repo-lin add .
+  git -C repo-lin commit -m "init"
+  git -C repo-lin remote add origin https://${GITEE_TOKEN}@gitee.com/zgpio/linpkg.git > /dev/null 2>&1
+  git -C repo-lin push -f origin master
   python plugin/update.py --dest ./
   ls -al

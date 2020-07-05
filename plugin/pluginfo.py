@@ -72,7 +72,7 @@ mirror_list = [
     Plugin('vim-jp/vital.vim'),
     Plugin('vim-airline/vim-airline-themes'),
     Plugin('vim-airline/vim-airline', patch=True),
-    Plugin('voldikss/vim-translate-me'),
+    Plugin('voldikss/vim-translator'),
     Plugin('Yggdroot/indentLine'),
     Plugin('Yggdroot/LeaderF'),
     # Plugin('Valloric/YouCompleteMe'),

@@ -21,7 +21,7 @@ def get():
             'lin': 'https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage',
         },
         {
-            'mac': 'https://github.com/kovidgoyal/kitty/releases/download/v0.15.1/kitty-0.15.1.dmg',
+            'mac': 'https://github.com/kovidgoyal/kitty/releases/download/v0.18.1/kitty-0.18.1.dmg',
         },
         {
             'mac': 'https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.4-r8/ShadowsocksX-NG-R8.dmg',

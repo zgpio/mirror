@@ -29,6 +29,9 @@ def get():
         {
             'mac': 'https://github.com/archagon/sensible-side-buttons/releases/download/1.0.6/SensibleSideButtons-1.0.6.dmg',
         },
+        {
+            'mac': 'https://github.com/citra-emu/citra-nightly/releases/download/nightly-1619/citra-osx-20200906-e97ecdc.tar.gz',
+        },
         # {
         #     'win': 'https://github.com/citra-emu/citra-canary/releases/download/canary-1557/citra-windows-mingw-20200204-21e03bc.7z',
         # },

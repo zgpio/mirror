@@ -23,9 +23,9 @@ def get():
         {
             'mac': 'https://github.com/kovidgoyal/kitty/releases/download/v0.18.3/kitty-0.18.3.dmg',
         },
-        {
-            'mac': 'https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.4-r8/ShadowsocksX-NG-R8.dmg',
-        },
+        # {
+        #     'mac': 'https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.4-r8/ShadowsocksX-NG-R8.dmg',
+        # },
         {
             'mac': 'https://github.com/archagon/sensible-side-buttons/releases/download/1.0.6/SensibleSideButtons-1.0.6.dmg',
         },

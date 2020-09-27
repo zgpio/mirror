@@ -14,6 +14,16 @@ import time
 
 def get():
     os.system('mkdir repo')
+    GITEE_TOKEN = os.environ['GITEE_TOKEN']
+    # Issue: 需要定期清理gitee仓库悬空文件(管理>存储库GC), 查看仓库大小(统计>仓库大小)
+    # Solution: 自动clear仓库
+    clear_repo = ['linpkg', 'macpkg', 'winpkg']
+    for repo in clear_repo:
+        cmd = f"""
+        curl -X PUT --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/zgpio/{repo}/clear' -d '{{"access_token":"{GITEE_TOKEN}"}}'
+        """
+        os.system(cmd)
+
     github_releases = [
         {
             'mac': 'https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz',

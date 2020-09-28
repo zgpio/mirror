@@ -3,7 +3,8 @@ import os
 import multiprocessing
 import datetime
 import argparse
-from pluginfo import mirror_list
+from update_gitee_mirror_repo import update_gitee_mirror_repo
+mirror_list = update_gitee_mirror_repo()
 
 
 def update_repo(uri: str, branch, dest):

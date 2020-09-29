@@ -10,14 +10,14 @@ mirror_list = update_gitee_mirror_repo()
 
 
 def get_github_branch_info(uri):
-    cmd = f"curl --silent --output /dev/null -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://api.github.com/repos/{uri}/branches/master'"
+    cmd = f"curl --silent -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://api.github.com/repos/{uri}/branches/master'"
     r = os.popen(cmd)
     info: str = r.readlines()
     conf: List = json.loads(''.join(info))
     return conf
 
 def get_gitee_branch_info(uri):
-    cmd = f"curl --silent --output /dev/null -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/{uri}/branches/master'"
+    cmd = f"curl --silent -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/{uri}/branches/master'"
     r = os.popen(cmd)
     info: str = r.readlines()
     conf: List = json.loads(''.join(info))

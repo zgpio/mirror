@@ -1,5 +1,7 @@
 from subprocess import PIPE, Popen
 import os
+import json
+from typing import List
 import multiprocessing
 import datetime
 import argparse
@@ -7,9 +9,36 @@ from update_gitee_mirror_repo import update_gitee_mirror_repo
 mirror_list = update_gitee_mirror_repo()
 
 
+def get_github_branch_info(uri):
+    cmd = f"curl -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://api.github.com/repos/{uri}/branches/master'"
+    r = os.popen(cmd)
+    info: str = r.readlines()
+    conf: List = json.loads(''.join(info))
+    return conf
+
+def get_gitee_branch_info(uri):
+    cmd = f"curl -X GET --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/{uri}/branches/master'"
+    r = os.popen(cmd)
+    info: str = r.readlines()
+    conf: List = json.loads(''.join(info))
+    return conf
+
+def check_update(uri):
+    user, repo = uri.split('/')
+    github = get_github_branch_info(uri)
+    gitee = get_gitee_branch_info(f'zgpio/{repo}')
+    github_sha = github['commit']['sha']
+    gitee_sha = gitee['commit']['sha']
+    if github_sha == gitee_sha:
+        return True
+    else:
+        return False
+
 def update_repo(uri: str, branch, dest):
     # TODO: git repo 完整性检查
     user, name = uri.split(os.sep)
+    if check_update(uri):
+        return
     dest = os.path.join(dest, name)
     cmd1 = f'git clone -b {branch} https://gitee.com/zgpio/{name} {dest}'
     cmd2 = f'git -C {dest} remote add upstream https://github.com/{uri}.git'

@@ -55,7 +55,6 @@ def update_gitee_mirror_repo():
             pickle.dump(conf, f)
 
     # 为了获取原仓库地址, 在仓库描述信息中填入 Mirror: 源仓库uri
-    # {uri: config}
     conf = [{
         'uri': dic['description'][8:]
     } for dic in conf if dic['description'].find('Mirror:') != -1]

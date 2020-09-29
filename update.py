@@ -50,7 +50,7 @@ def get():
     # TODO: version detect
     for i in github_releases:
         for j, url in i.items():
-            os.system(f'wget -P repo-{j} {url}')
+            os.system(f'wget -q -P repo-{j} {url}')
 
 
 if __name__ == "__main__":

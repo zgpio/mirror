@@ -17,6 +17,6 @@ script: |
   git config --global user.email "zgpio@qq.com"
   git config --global credential.helper store
   echo $GIT_CREDENTIALS > ~/.git-credentials
-  python update.py
   python plugin/update.py --dest ./
+  python update.py
   ls -al

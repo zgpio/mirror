@@ -13,7 +13,6 @@ import time
 
 
 def get():
-    os.system('mkdir repo')
     GITEE_TOKEN = os.environ['GITEE_TOKEN']
     USER_PASSWORD = os.environ['USER_PASSWORD']
     # Issue: 需要定期清理gitee仓库悬空文件(管理>存储库GC), 查看仓库大小(统计>仓库大小)

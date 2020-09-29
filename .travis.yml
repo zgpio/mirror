@@ -18,20 +18,5 @@ script: |
   git config --global credential.helper store
   echo $GIT_CREDENTIALS > ~/.git-credentials
   python update.py
-  git -C repo-win init
-  git -C repo-win add .
-  git -C repo-win commit -m "init"
-  git -C repo-win remote add origin https://${USER_PASSWORD}@gitee.com/zgpio/winpkg.git > /dev/null 2>&1
-  git -C repo-win push origin master
-  git -C repo-mac init
-  git -C repo-mac add .
-  git -C repo-mac commit -m "init"
-  git -C repo-mac remote add origin https://${USER_PASSWORD}@gitee.com/zgpio/macpkg.git > /dev/null 2>&1
-  git -C repo-mac push origin master
-  git -C repo-lin init
-  git -C repo-lin add .
-  git -C repo-lin commit -m "init"
-  git -C repo-lin remote add origin https://${USER_PASSWORD}@gitee.com/zgpio/linpkg.git > /dev/null 2>&1
-  git -C repo-lin push origin master
   python plugin/update.py --dest ./
   ls -al

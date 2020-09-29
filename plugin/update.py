@@ -50,6 +50,7 @@ def update(dest, uri=None):
     # Multiprocessing 3 times faster than Single.
     start_tim = datetime.datetime.now()
     print('Start time:', start_tim.strftime('%Y-%m-%d %H:%M:%S'))
+    print("~" * 40)
     pool = multiprocessing.Pool(processes=4)
 
     for plug in mirror_list:
@@ -58,7 +59,6 @@ def update(dest, uri=None):
         # 维持执行的进程总数为processes, 当一个进程执行完毕后会添加新的进程进去
         pool.apply_async(update_repo, (uri, branch, dest, ))
 
-    print("~" * 40)
     pool.close()
     # 调用join之前, 先调用close函数, 否则会出错.
     # 执行完close后不会有新的进程加入到pool, join函数等待所有子进程结束
